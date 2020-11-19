@@ -38,7 +38,7 @@ gr:insert(groupp)
 local gg
 local snpashotListener
 
-local function createGRoup(r, g, b, grav)
+local function createGRoup(r, g, b, grav, a)
     gg = display.newGroup()
     groupp:insert(gg)
 
@@ -79,7 +79,7 @@ local function createGRoup(r, g, b, grav)
     snapshot.x = _W / 2
     snapshot.y = _H / 2
     snapshot.canvasMode = "discard"
-    --snapshot.alpha = 0.3
+    snapshot.alpha = a
 
     snapshotGroup.anchorChildren = false
     snapshotGroup:insert( particleSystem )
@@ -191,4 +191,22 @@ startButton:addEventListener( "touch", function(event)
     end
 end)
 
-createGRoup(tonumber(rText.text), tonumber(gText.text), tonumber(bText.text), tonumber(gravText.text))
+--createGRoup(tonumber(rText.text), tonumber(gText.text), tonumber(bText.text), tonumber(gravText.text))
+--createGRoup(0.6, 0.1, 0, 2)
+createGRoup(0.0, 0.1, 0.5, 2, 0.3)
+
+local b1 = display.newRect(gr, _W / 2, 0, _W, _H * 0.75 )
+b1.anchorY = 0
+b1:setFillColor(0)
+
+local b2 = display.newRect(gr, _W / 2, _H, _W, _H * 0.1 )
+b2.anchorY = 1
+b2:setFillColor(0)
+
+local b3 = display.newRect(gr, 0, _H, _W * 0.2, _H)
+b3.anchorX = 0
+b3:setFillColor(0)
+
+local b4 = display.newRect(gr, _W, _H, _W * 0.2, _H)
+b4.anchorX = 1
+b4:setFillColor(0)
