@@ -195,7 +195,7 @@ end)
 --createGRoup(0.6, 0.1, 0, 2)
 createGRoup(0.0, 0.1, 0.5, 2, 0.3)
 
-local b1 = display.newRect(gr, _W / 2, 0, _W, _H * 0.75 )
+--[[ local b1 = display.newRect(gr, _W / 2, 0, _W, _H * 0.75 )
 b1.anchorY = 0
 b1:setFillColor(0)
 
@@ -209,4 +209,16 @@ b3:setFillColor(0)
 
 local b4 = display.newRect(gr, _W, _H, _W * 0.2, _H)
 b4.anchorX = 1
-b4:setFillColor(0)
+b4:setFillColor(0) ]]
+
+local rect = display.newImage(gr, "m.png", _W / 2 , _H * 1.15)
+rect.anchorY = 1
+
+local aspectRatio = rect.width / rect.height
+
+rect.width = _W * 3
+rect.height = rect.width / aspectRatio
+--[[ rect.fill = {
+    type = "image",
+    filename = "m.png"
+} ]]
