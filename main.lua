@@ -32,6 +32,9 @@ rightSide.anchorX = 0
 physics.addBody( rightSide, "static" )
 rightSide.fill = { 1 }
 
+local rect1 = display.newImage(gr, "m.jpg", _W / 2 , _H * 1.15)
+rect1.anchorY = 1
+
 local groupp = display.newGroup()
 gr:insert(groupp)
 
@@ -193,7 +196,7 @@ end)
 
 --createGRoup(tonumber(rText.text), tonumber(gText.text), tonumber(bText.text), tonumber(gravText.text))
 --createGRoup(0.6, 0.1, 0, 2)
-createGRoup(0.0, 0.1, 0.5, 2, 0.3)
+createGRoup(0.5, 0.1, 0.0, 2, 0.2)
 
 --[[ local b1 = display.newRect(gr, _W / 2, 0, _W, _H * 0.75 )
 b1.anchorY = 0
@@ -211,6 +214,7 @@ local b4 = display.newRect(gr, _W, _H, _W * 0.2, _H)
 b4.anchorX = 1
 b4:setFillColor(0) ]]
 
+
 local rect = display.newImage(gr, "m.png", _W / 2 , _H * 1.15)
 rect.anchorY = 1
 
@@ -218,6 +222,9 @@ local aspectRatio = rect.width / rect.height
 
 rect.width = _W * 3
 rect.height = rect.width / aspectRatio
+
+rect1.width = _W * 3
+rect1.height = rect.width / aspectRatio
 --[[ rect.fill = {
     type = "image",
     filename = "m.png"
